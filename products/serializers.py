@@ -1,11 +1,13 @@
 from rest_framework import serializers
 from .models import Product, ProductImage
 
-
 class ProductImageSerializer(serializers.ModelSerializer):
+
+    image = serializers.CharField()  # <- remove validação rígida de URL
+
     class Meta:
         model = ProductImage
-        fields = ["id", "image"]
+        fields = ["id", "product", "image"]
 
 
 class ProductSerializer(serializers.ModelSerializer):
