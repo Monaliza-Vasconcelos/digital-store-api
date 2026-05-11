@@ -1,4 +1,5 @@
 from rest_framework import generics
+
 from .models import Product, ProductImage
 from .serializers import ProductSerializer, ProductImageSerializer
 
@@ -14,5 +15,10 @@ class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ProductImageListCreateView(generics.ListCreateAPIView):
+    queryset = ProductImage.objects.all()
+    serializer_class = ProductImageSerializer
+
+
+class ProductImageDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProductImage.objects.all()
     serializer_class = ProductImageSerializer
