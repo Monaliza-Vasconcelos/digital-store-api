@@ -133,8 +133,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 CORS_ALLOWED_ORIGINS = [
+
     "http://localhost:5173",
-    "https://digital-store-api-0769.onrender.com",
+
+    "https://loja-digital-store-projeto-front-en.vercel.app",
+
 ]
 
 REST_FRAMEWORK = {
